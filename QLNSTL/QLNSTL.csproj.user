@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="ADMENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NVLOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NVMENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QLLOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
