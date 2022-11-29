@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLNSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BangChamCong">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Thang" Type="Int32" Nullable="false" />
+    <Property Name="SoNgayLam" Type="Int32" />
+    <Property Name="LuongTru" Type="Double" />
+    <Property Name="LuongThuong" Type="Double" />
+    <Property Name="TongLuong" Type="Double" />
+    <NavigationProperty Name="ThongTinNhanViens" Relationship="Self.FK_ThongTinNhanVien_BangChamCong" FromRole="BangChamCong" ToRole="ThongTinNhanVien" />
+  </EntityType>
+  <EntityType Name="MenuTopping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Double" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetail_MenuTopping" FromRole="MenuTopping" ToRole="OrderDetail" />
+  </EntityType>
+  <EntityType Name="MenuTraSua">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Double" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetail_MenuTraSua" FromRole="MenuTraSua" ToRole="OrderDetail" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="IdNV" />
+    </Key>
+    <Property Name="IdNV" Type="Int32" Nullable="false" />
+    <Property Name="IdTraSua" Type="Int32" />
+    <Property Name="IdTopping" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="ThanhTien" Type="Double" />
+    <NavigationProperty Name="MenuTopping" Relationship="Self.FK_OrderDetail_MenuTopping" FromRole="OrderDetail" ToRole="MenuTopping" />
+    <NavigationProperty Name="MenuTraSua" Relationship="Self.FK_OrderDetail_MenuTraSua" FromRole="OrderDetail" ToRole="MenuTraSua" />
+    <NavigationProperty Name="ThongTinNhanViens" Relationship="Self.FK_ThongTinNhanVien_OrderDetail" FromRole="OrderDetail" ToRole="ThongTinNhanVien" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoanNhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ThongTinNhanViens" Relationship="Self.FK_ThongTinNhanVien_TaiKhoanNhanVien" FromRole="TaiKhoanNhanVien" ToRole="ThongTinNhanVien" />
+  </EntityType>
+  <EntityType Name="ThongTinNhanVien">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="ChucVu" Type="Int32" />
+    <NavigationProperty Name="BangChamCong" Relationship="Self.FK_ThongTinNhanVien_BangChamCong" FromRole="ThongTinNhanVien" ToRole="BangChamCong" />
+    <NavigationProperty Name="OrderDetail" Relationship="Self.FK_ThongTinNhanVien_OrderDetail" FromRole="ThongTinNhanVien" ToRole="OrderDetail" />
+    <NavigationProperty Name="TaiKhoanNhanVien" Relationship="Self.FK_ThongTinNhanVien_TaiKhoanNhanVien" FromRole="ThongTinNhanVien" ToRole="TaiKhoanNhanVien" />
+  </EntityType>
+  <Association Name="FK_ThongTinNhanVien_BangChamCong">
+    <End Role="BangChamCong" Type="Self.BangChamCong" Multiplicity="1" />
+    <End Role="ThongTinNhanVien" Type="Self.ThongTinNhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BangChamCong">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="ThongTinNhanVien">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_MenuTopping">
+    <End Role="MenuTopping" Type="Self.MenuTopping" Multiplicity="0..1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuTopping">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="IdTopping" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_MenuTraSua">
+    <End Role="MenuTraSua" Type="Self.MenuTraSua" Multiplicity="0..1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuTraSua">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="IdTraSua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongTinNhanVien_OrderDetail">
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
+    <End Role="ThongTinNhanVien" Type="Self.ThongTinNhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDetail">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="ThongTinNhanVien">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongTinNhanVien_TaiKhoanNhanVien">
+    <End Role="TaiKhoanNhanVien" Type="Self.TaiKhoanNhanVien" Multiplicity="1" />
+    <End Role="ThongTinNhanVien" Type="Self.ThongTinNhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoanNhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="ThongTinNhanVien">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLNSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BangChamCongs" EntityType="Self.BangChamCong" />
+    <EntitySet Name="MenuToppings" EntityType="Self.MenuTopping" />
+    <EntitySet Name="MenuTraSuas" EntityType="Self.MenuTraSua" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TaiKhoanNhanViens" EntityType="Self.TaiKhoanNhanVien" />
+    <EntitySet Name="ThongTinNhanViens" EntityType="Self.ThongTinNhanVien" />
+    <AssociationSet Name="FK_ThongTinNhanVien_BangChamCong" Association="Self.FK_ThongTinNhanVien_BangChamCong">
+      <End Role="BangChamCong" EntitySet="BangChamCongs" />
+      <End Role="ThongTinNhanVien" EntitySet="ThongTinNhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_MenuTopping" Association="Self.FK_OrderDetail_MenuTopping">
+      <End Role="MenuTopping" EntitySet="MenuToppings" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_MenuTraSua" Association="Self.FK_OrderDetail_MenuTraSua">
+      <End Role="MenuTraSua" EntitySet="MenuTraSuas" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThongTinNhanVien_OrderDetail" Association="Self.FK_ThongTinNhanVien_OrderDetail">
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+      <End Role="ThongTinNhanVien" EntitySet="ThongTinNhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThongTinNhanVien_TaiKhoanNhanVien" Association="Self.FK_ThongTinNhanVien_TaiKhoanNhanVien">
+      <End Role="TaiKhoanNhanVien" EntitySet="TaiKhoanNhanViens" />
+      <End Role="ThongTinNhanVien" EntitySet="ThongTinNhanViens" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
