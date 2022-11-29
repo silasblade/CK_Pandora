@@ -32,6 +32,10 @@ namespace QLNSTL
             dt.Clear();
             sda.Fill(dt);
             dgv.DataSource = dt;
+    
+            comboBox1.DataSource = dt;
+            comboBox1.DisplayMember = "NamSinh";
+            comboBox1.ValueMember = "MaNV";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -49,6 +53,7 @@ namespace QLNSTL
             sc = new SqlConnection(str);
             sc.Open();
             loaddata();
+  
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,6 +77,26 @@ namespace QLNSTL
         private void button8_Click(object sender, EventArgs e)
         {
             loaddata();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = "MaNV LIKE '" + textBox1.Text + "%'";
+            dgv.DataSource = dv;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = "TenNV LIKE '" + textBox2.Text + "%'";
+            dgv.DataSource = dv;
         }
     }
 }
