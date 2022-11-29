@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace QLNSTL
 {
-    public partial class ADMENU : Form
+    public partial class TTNV : Form
     {
-        public ADMENU()
+        public TTNV()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-         
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

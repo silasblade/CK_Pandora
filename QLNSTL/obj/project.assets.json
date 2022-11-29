@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\blade\\source\\repos\\QLNSTL\\QLNSTL\\QLNSTL.csproj",
+      "projectUniqueName": "C:\\Users\\blade\\OneDrive\\Documents\\GitHub\\CK_Pandora\\QLNSTL\\QLNSTL.csproj",
       "projectName": "QLNSTL",
-      "projectPath": "C:\\Users\\blade\\source\\repos\\QLNSTL\\QLNSTL\\QLNSTL.csproj",
+      "projectPath": "C:\\Users\\blade\\OneDrive\\Documents\\GitHub\\CK_Pandora\\QLNSTL\\QLNSTL.csproj",
       "packagesPath": "C:\\Users\\blade\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\blade\\source\\repos\\QLNSTL\\QLNSTL\\obj\\",
+      "outputPath": "C:\\Users\\blade\\OneDrive\\Documents\\GitHub\\CK_Pandora\\QLNSTL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\blade\\AppData\\Roaming\\NuGet\\NuGet.Config",

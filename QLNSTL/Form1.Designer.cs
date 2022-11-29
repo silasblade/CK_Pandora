@@ -39,7 +39,7 @@
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(162, 369);
+            this.button1.Location = new System.Drawing.Point(169, 297);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(227, 97);
             this.button1.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(586, 369);
+            this.button2.Location = new System.Drawing.Point(539, 297);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(227, 97);
             this.button2.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(264, 136);
+            this.label1.Location = new System.Drawing.Point(278, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 29);
             this.label1.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(977, 676);
+            this.ClientSize = new System.Drawing.Size(932, 676);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);

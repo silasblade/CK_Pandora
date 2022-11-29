@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace QLNSTL
 {
-    public partial class ADMENU : Form
+    public partial class AddNV : Form
     {
-        public ADMENU()
+        public AddNV()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-         
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

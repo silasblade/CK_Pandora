@@ -1,6 +1,6 @@
 ﻿namespace QLNSTL
 {
-    partial class NVMENU
+    partial class EditNV
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -49,21 +49,21 @@
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(25, 437);
+            this.button2.Location = new System.Drawing.Point(290, 479);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(162, 30);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "In thông tin nhân viên";
+            this.button2.Size = new System.Drawing.Size(118, 30);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Lưu và trở lại";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button1
             // 
-            this.button4.Location = new System.Drawing.Point(294, 494);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 29);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Quay lại";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(150, 479);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Hủy bỏ";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -79,12 +79,13 @@
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(25, 12);
+            this.groupBox1.Location = new System.Drawing.Point(36, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(372, 410);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin nhân viên";
+            this.groupBox1.Text = "Chỉnh sửa thông tin nhân viên";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label6
             // 
@@ -182,16 +183,16 @@
             this.textBox1.Size = new System.Drawing.Size(180, 27);
             this.textBox1.TabIndex = 0;
             // 
-            // NVMENU
+            // EditNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 561);
+            this.ClientSize = new System.Drawing.Size(444, 548);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "NVMENU";
-            this.Text = "NVMENU";
+            this.Name = "EditNV";
+            this.Text = "EditNV";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -202,7 +203,7 @@
         #endregion
 
         private Button button2;
-        private Button button4;
+        private Button button1;
         private GroupBox groupBox1;
         private Label label6;
         private TextBox textBox6;
