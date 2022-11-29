@@ -31,20 +31,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -84,6 +84,16 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các tính năng";
+            // 
+            // button7
+            // 
+            this.button7.AutoSize = true;
+            this.button7.Location = new System.Drawing.Point(54, 278);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(123, 30);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Xuất danh sách";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -143,6 +153,43 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tra cứu";
             // 
+            // button8
+            // 
+            this.button8.AutoSize = true;
+            this.button8.Location = new System.Drawing.Point(461, 140);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(123, 30);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "Làm mới";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(370, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Năm sinh";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(461, 45);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(209, 28);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // button6
+            // 
+            this.button6.AutoSize = true;
+            this.button6.Location = new System.Drawing.Point(66, 140);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(123, 30);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Tìm kiếm";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -175,53 +222,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(208, 27);
             this.textBox1.TabIndex = 0;
-            // 
-            // button6
-            // 
-            this.button6.AutoSize = true;
-            this.button6.Location = new System.Drawing.Point(66, 140);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(123, 30);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Tìm kiếm";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(461, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 28);
-            this.comboBox1.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(370, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Năm sinh";
-            // 
-            // button7
-            // 
-            this.button7.AutoSize = true;
-            this.button7.Location = new System.Drawing.Point(54, 278);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(123, 30);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Xuất danh sách";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.AutoSize = true;
-            this.button8.Location = new System.Drawing.Point(461, 140);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(123, 30);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Làm mới";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // ADMENU
             // 

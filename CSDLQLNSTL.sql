@@ -18,6 +18,9 @@ create table BANGCHAMCONG
 MaNV varchar(20),
 Thang int,
 SoNgayDiLam int,
+LuongTru float,
+LuongThuong float,
+TongLuong float,
 PRIMARY KEY(MaNV,Thang)
 )
 ALTER TABLE BANGCHAMCONG ADD CONSTRAINT FK_MaNV_BANGCHAMCONG FOREIGN KEY(MaNV) REFERENCES NHANVIEN(MaNV)
