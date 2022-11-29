@@ -127,9 +127,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(10, 282);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 20);
+            this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Địa chỉ";
+            this.label5.Text = "Số điện thoại";
             // 
             // textBox5
             // 
@@ -143,9 +143,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 218);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 20);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Năm sinh";
+            this.label4.Text = "Địa chỉ";
             // 
             // textBox4
             // 
@@ -159,9 +159,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 20);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "SĐT";
+            this.label3.Text = "Năm sinh";
             // 
             // button1
             // 
@@ -182,6 +182,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Thêm và trở lại";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddNV
             // 
