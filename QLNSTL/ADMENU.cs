@@ -18,8 +18,8 @@ namespace QLNSTL
             InitializeComponent();
         }
 
-        SqlConnection sc;
-        SqlCommand scm;
+        SqlConnection sc = default!;
+        SqlCommand scm = default!;
         string str = @"Data Source=VISHAGNA;Initial Catalog=QLNSTL;Integrated Security=True";
         SqlDataAdapter sda = new SqlDataAdapter();
         DataTable dt = new DataTable();

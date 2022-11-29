@@ -101,7 +101,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(33, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 410);
+            this.groupBox1.Size = new System.Drawing.Size(364, 410);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin nhân viên";
@@ -165,7 +165,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(147, 484);
+            this.button1.Location = new System.Drawing.Point(98, 476);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 6;
@@ -176,7 +176,7 @@
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(287, 484);
+            this.button2.Location = new System.Drawing.Point(243, 476);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 30);
             this.button2.TabIndex = 7;
@@ -188,10 +188,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 548);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(425, 548);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button2);
             this.Name = "AddNV";
             this.Text = "AddNV";
             this.groupBox1.ResumeLayout(false);

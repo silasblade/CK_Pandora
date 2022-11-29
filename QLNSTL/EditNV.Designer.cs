@@ -31,6 +31,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Lưu và trở lại";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -68,6 +70,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label5);
@@ -82,11 +85,22 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(36, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 410);
+            this.groupBox1.Size = new System.Drawing.Size(472, 410);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chỉnh sửa thông tin nhân viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.Location = new System.Drawing.Point(344, 33);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 30);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Lấy thông tin";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label6
             // 
@@ -109,9 +123,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(10, 282);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 20);
+            this.label5.Size = new System.Drawing.Size(36, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Địa chỉ";
+            this.label5.Text = "SĐT";
             // 
             // textBox5
             // 
@@ -125,9 +139,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 218);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 20);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Năm sinh";
+            this.label4.Text = "Địa chỉ";
             // 
             // textBox4
             // 
@@ -141,9 +155,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 20);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "SĐT";
+            this.label3.Text = "Năm sinh";
             // 
             // label2
             // 
@@ -159,9 +173,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 20);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "ID";
+            this.label1.Text = "Nhập ID";
             // 
             // textBox3
             // 
@@ -183,12 +197,13 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 27);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // EditNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 548);
+            this.ClientSize = new System.Drawing.Size(520, 548);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -218,5 +233,6 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
+        private Button button3;
     }
 }

@@ -35,20 +35,32 @@ namespace QLNSTL
             string sdt = textBox5.Text;
             string gioitinh = textBox6.Text;
 
-
-            string query = "INSERT INTO NHANVIEN VALUES("+id+",N'"+tennv+"', "+namsinh+", N'"+diachi+"',  "+sdt+" ,N'"+gioitinh+"') ";
-            SqlCommand cmd = new SqlCommand(query, con);
-            int n = cmd.ExecuteNonQuery();
-            if(n>0)
+            try
             {
-                MessageBox.Show("Thêm thành công");
+                string query = "INSERT INTO NHANVIEN VALUES(" + id + ",N'" + tennv + "', " + namsinh + ", N'" + diachi + "',  " + sdt + " ,N'" + gioitinh + "') ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0)
+                {
+                    MessageBox.Show("Thêm thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại");
+                }
             }
-            else
+
+            catch
             {
                 MessageBox.Show("Thêm thất bại");
             }
             con.Close();
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

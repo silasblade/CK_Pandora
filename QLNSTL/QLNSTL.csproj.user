@@ -16,6 +16,9 @@
     <Compile Update="GT.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="IDEDIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LuongNV.cs">
       <SubType>Form</SubType>
     </Compile>
