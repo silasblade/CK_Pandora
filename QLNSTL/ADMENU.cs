@@ -59,8 +59,8 @@ namespace QLNSTL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int rowIndex = dgv.CurrentCell.RowIndex;
-            dgv.Rows.RemoveAt(rowIndex);
+            XoaNV xoa = new XoaNV();
+            xoa.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)

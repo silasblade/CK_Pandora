@@ -31,5 +31,8 @@
     <Compile Update="TTNV.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="XoaNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
