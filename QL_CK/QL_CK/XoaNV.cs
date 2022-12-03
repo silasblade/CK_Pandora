@@ -21,6 +21,7 @@ namespace QL_CK
         {
             try
             {
+                
                 var NV = db.NHANVIENs.SingleOrDefault(nv => nv.MaNV == textBox1.Text);
                 db.NHANVIENs.DeleteOnSubmit(NV);
                 db.SubmitChanges();
@@ -34,6 +35,11 @@ namespace QL_CK
             this.Close();
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -36,6 +36,9 @@ namespace QL_CK
     partial void InsertTAIKHOANADMIN(TAIKHOANADMIN instance);
     partial void UpdateTAIKHOANADMIN(TAIKHOANADMIN instance);
     partial void DeleteTAIKHOANADMIN(TAIKHOANADMIN instance);
+    partial void InsertCHECKIN(CHECKIN instance);
+    partial void UpdateCHECKIN(CHECKIN instance);
+    partial void DeleteCHECKIN(CHECKIN instance);
     partial void InsertBANGCHAMCONG(BANGCHAMCONG instance);
     partial void UpdateBANGCHAMCONG(BANGCHAMCONG instance);
     partial void DeleteBANGCHAMCONG(BANGCHAMCONG instance);
@@ -87,6 +90,14 @@ namespace QL_CK
 			get
 			{
 				return this.GetTable<TAIKHOANADMIN>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CHECKIN> CHECKINs
+		{
+			get
+			{
+				return this.GetTable<CHECKIN>();
 			}
 		}
 		
@@ -431,6 +442,163 @@ namespace QL_CK
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHECKIN")]
+	public partial class CHECKIN : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaNV;
+		
+		private int _Thang;
+		
+		private System.Nullable<int> _Ngay;
+		
+		private EntityRef<BANGCHAMCONG> _BANGCHAMCONG;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaNVChanging(string value);
+    partial void OnMaNVChanged();
+    partial void OnThangChanging(int value);
+    partial void OnThangChanged();
+    partial void OnNgayChanging(System.Nullable<int> value);
+    partial void OnNgayChanged();
+    #endregion
+		
+		public CHECKIN()
+		{
+			this._BANGCHAMCONG = default(EntityRef<BANGCHAMCONG>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNV", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaNV
+		{
+			get
+			{
+				return this._MaNV;
+			}
+			set
+			{
+				if ((this._MaNV != value))
+				{
+					if (this._BANGCHAMCONG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaNVChanging(value);
+					this.SendPropertyChanging();
+					this._MaNV = value;
+					this.SendPropertyChanged("MaNV");
+					this.OnMaNVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thang", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Thang
+		{
+			get
+			{
+				return this._Thang;
+			}
+			set
+			{
+				if ((this._Thang != value))
+				{
+					if (this._BANGCHAMCONG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnThangChanging(value);
+					this.SendPropertyChanging();
+					this._Thang = value;
+					this.SendPropertyChanged("Thang");
+					this.OnThangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Int")]
+		public System.Nullable<int> Ngay
+		{
+			get
+			{
+				return this._Ngay;
+			}
+			set
+			{
+				if ((this._Ngay != value))
+				{
+					this.OnNgayChanging(value);
+					this.SendPropertyChanging();
+					this._Ngay = value;
+					this.SendPropertyChanged("Ngay");
+					this.OnNgayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGCHAMCONG_CHECKIN", Storage="_BANGCHAMCONG", ThisKey="MaNV,Thang", OtherKey="MaNV,Thang", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public BANGCHAMCONG BANGCHAMCONG
+		{
+			get
+			{
+				return this._BANGCHAMCONG.Entity;
+			}
+			set
+			{
+				BANGCHAMCONG previousValue = this._BANGCHAMCONG.Entity;
+				if (((previousValue != value) 
+							|| (this._BANGCHAMCONG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BANGCHAMCONG.Entity = null;
+						previousValue.CHECKIN = null;
+					}
+					this._BANGCHAMCONG.Entity = value;
+					if ((value != null))
+					{
+						value.CHECKIN = this;
+						this._MaNV = value.MaNV;
+						this._Thang = value.Thang;
+					}
+					else
+					{
+						this._MaNV = default(string);
+						this._Thang = default(int);
+					}
+					this.SendPropertyChanged("BANGCHAMCONG");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BANGCHAMCONG")]
 	public partial class BANGCHAMCONG : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -442,6 +610,8 @@ namespace QL_CK
 		private int _Thang;
 		
 		private System.Nullable<int> _SoNgayDiLam;
+		
+		private EntityRef<CHECKIN> _CHECKIN;
 		
 		private EntityRef<NHANVIEN> _NHANVIEN;
 		
@@ -459,6 +629,7 @@ namespace QL_CK
 		
 		public BANGCHAMCONG()
 		{
+			this._CHECKIN = default(EntityRef<CHECKIN>);
 			this._NHANVIEN = default(EntityRef<NHANVIEN>);
 			OnCreated();
 		}
@@ -527,7 +698,36 @@ namespace QL_CK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_BANGCHAMCONG", Storage="_NHANVIEN", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGCHAMCONG_CHECKIN", Storage="_CHECKIN", ThisKey="MaNV,Thang", OtherKey="MaNV,Thang", IsUnique=true, IsForeignKey=false)]
+		public CHECKIN CHECKIN
+		{
+			get
+			{
+				return this._CHECKIN.Entity;
+			}
+			set
+			{
+				CHECKIN previousValue = this._CHECKIN.Entity;
+				if (((previousValue != value) 
+							|| (this._CHECKIN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CHECKIN.Entity = null;
+						previousValue.BANGCHAMCONG = null;
+					}
+					this._CHECKIN.Entity = value;
+					if ((value != null))
+					{
+						value.BANGCHAMCONG = this;
+					}
+					this.SendPropertyChanged("CHECKIN");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_BANGCHAMCONG", Storage="_NHANVIEN", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public NHANVIEN NHANVIEN
 		{
 			get
@@ -678,7 +878,7 @@ namespace QL_CK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_TAIKHOANNV", Storage="_NHANVIEN", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_TAIKHOANNV", Storage="_NHANVIEN", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public NHANVIEN NHANVIEN
 		{
 			get

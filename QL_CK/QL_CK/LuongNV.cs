@@ -23,9 +23,9 @@ namespace QL_CK
         private void button1_Click(object sender, EventArgs e)
         {
             
-            if (textBox1.Text == "")
+            if (textBox1.Text == "" ||  textBox2.Text == "")
             {
-                MessageBox.Show("ID trống");
+                MessageBox.Show("ID trống hoặc Tháng trống");
             }
             else
             {

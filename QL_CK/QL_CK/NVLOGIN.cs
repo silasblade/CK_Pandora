@@ -47,6 +47,16 @@ namespace QL_CK
             }
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.PasswordChar = '*';
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hệ thống đang bảo trì");
+        }
     }
     
 }

@@ -19,7 +19,7 @@ namespace QL_CK
             InitializeComponent();
         }
 
-        DataClasses1DataContext db = new DataClasses1DataContext();
+   
         ReportDataSource rs = new ReportDataSource();
 
         private void ADMENU_Load(object sender, EventArgs e)
@@ -67,6 +67,7 @@ namespace QL_CK
 
         private void button6_Click(object sender, EventArgs e)
         {
+            DataClasses1DataContext db = new DataClasses1DataContext();
             try
             {
 
@@ -127,8 +128,7 @@ namespace QL_CK
                 rl.reportViewer1.LocalReport.ReportEmbeddedResource = "QL_CK.Report1.rdlc";
                 rl.ShowDialog();
              
-            ReportList rp = new ReportList();
-            rp.ShowDialog();
+          
  
         }
 
@@ -142,6 +142,20 @@ namespace QL_CK
         {
             Form1 frm = new Form1();
             frm.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ExNV exNV = new ExNV();
+            exNV.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ReChart c = new ReChart();
+            c.Show();
             this.Hide();
         }
     }

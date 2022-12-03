@@ -18,12 +18,21 @@
       <Column Name="Pass" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CHECKIN" Member="CHECKINs">
+    <Type Name="CHECKIN">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BANGCHAMCONG_CHECKIN" Member="BANGCHAMCONG" ThisKey="MaNV,Thang" OtherKey="MaNV,Thang" Type="BANGCHAMCONG" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.BANGCHAMCONG" Member="BANGCHAMCONGs">
     <Type Name="BANGCHAMCONG">
       <Column Name="MaNV" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoNgayDiLam" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="NHANVIEN_BANGCHAMCONG" Member="NHANVIEN" ThisKey="MaNV" OtherKey="MaNV" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="BANGCHAMCONG_CHECKIN" Member="CHECKIN" ThisKey="MaNV,Thang" OtherKey="MaNV,Thang" Type="CHECKIN" Cardinality="One" />
+      <Association Name="NHANVIEN_BANGCHAMCONG" Member="NHANVIEN" ThisKey="MaNV" OtherKey="MaNV" Type="NHANVIEN" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TAIKHOANNV" Member="TAIKHOANNVs">
@@ -31,7 +40,7 @@
       <Column Name="MaNV" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Pass" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Association Name="NHANVIEN_TAIKHOANNV" Member="NHANVIEN" ThisKey="MaNV" OtherKey="MaNV" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="NHANVIEN_TAIKHOANNV" Member="NHANVIEN" ThisKey="MaNV" OtherKey="MaNV" Type="NHANVIEN" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

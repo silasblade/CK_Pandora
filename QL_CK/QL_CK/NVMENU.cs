@@ -37,7 +37,6 @@ namespace QL_CK
         {
             NVLOGIN nl = new NVLOGIN();
             textBox1.Text = Id;
-            MessageBox.Show(Id);
             var st = (from s in db.NHANVIENs where s.MaNV == textBox1.Text select s).First();
             textBox2.Text = st.TenNV;
             textBox3.Text = st.NamSinh.ToString();
@@ -53,6 +52,53 @@ namespace QL_CK
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+                DateTime dt = DateTime.Now;
+                
+                
+                var checkin = (from t in db.CHECKINs where t.MaNV == textBox1.Text && t.Thang == dt.Month && t.Ngay == dt.Day select t).SingleOrDefault();
+                if (checkin == null)
+                {
+                    CHECKIN ck = new CHECKIN();
+                    ck.MaNV = textBox1.Text;
+                    ck.Thang = dt.Month;
+                    ck.Ngay = dt.Day;
+                    db.CHECKINs.InsertOnSubmit(ck);
+
+
+                    var st = (from s in db.BANGCHAMCONGs where s.MaNV == textBox1.Text && s.Thang == dt.Month select s).SingleOrDefault();
+                    if(st == null)
+                {
+                    BANGCHAMCONG bcc = new BANGCHAMCONG();
+                    bcc.MaNV = textBox1.Text;
+                    bcc.Thang = dt.Month;
+                    bcc.SoNgayDiLam = 1;
+                    db.BANGCHAMCONGs.InsertOnSubmit(bcc);
+                    db.SubmitChanges();
+                }
+                else
+                {
+                    st.SoNgayDiLam = st.SoNgayDiLam + 1;
+                    db.SubmitChanges();
+                }
+                    
+                    MessageBox.Show("Bạn đã điểm danh thành công");
+                    this.Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Bạn đã điểm danh trước đó rồi");
+                    this.Close();
+                } 
+                    
+                
+            
+            
         }
     }
 }

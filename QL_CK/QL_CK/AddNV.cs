@@ -35,6 +35,12 @@ namespace QL_CK
                 nv.GioiTinh = textBox6.Text;
                 db.NHANVIENs.InsertOnSubmit(nv);
                 db.SubmitChanges();
+                TAIKHOANNV tknv = new TAIKHOANNV();
+                tknv.MaNV = textBox1.Text;
+                tknv.Username = nv.MaNV;
+                tknv.Pass = Decimal.Parse(nv.MaNV);
+                db.TAIKHOANNVs.InsertOnSubmit(tknv);
+                db.SubmitChanges();
                 MessageBox.Show("Bạn đã thêm nhân viên mới thành công");
                 this.Close();
             }
